@@ -14,7 +14,7 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotBlank(message = "A name must be entered for this job")
+    @NotBlank(message = "Required field")
     @Size(max = 75, message = "Name cannot be longer than 75 characters")
     private String name;
 
