@@ -39,7 +39,6 @@ public class HomeController {
 
     @GetMapping("add")
     public String displayAddJobForm(Model model) {
-
         model.addAttribute("employers", employerRepository.findAll());
         model.addAttribute("skills", skillRepository.findAll());
         model.addAttribute(new Job());
@@ -64,13 +63,12 @@ public class HomeController {
         newJob.setSkills(skillObjs);
 
         jobRepository.save(newJob);
-        return "redirect:";
+
+        return "view";
     }
 
     @GetMapping("view/{jobId}")
     public String displayViewJob(Model model, @PathVariable int jobId) {
-
-//        model.addAttribute("job", jobRepository.findById(jobId));
 
         return "view";
     }
